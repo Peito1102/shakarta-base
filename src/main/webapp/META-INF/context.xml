@@ -2,6 +2,6 @@
 
     <Resource name="jdbc/mysqlDB" auth="Container" type="javax.sql.DataSource"
               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-              username="root" password="sasa" driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/java_curso?serverTimezone=America/Santiago"/>
+              username="root" password="mysql" driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/java_curso?serverTimezone=America/Lima"/>
 </Context>
