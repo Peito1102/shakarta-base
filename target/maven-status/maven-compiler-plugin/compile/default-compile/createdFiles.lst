@@ -16,6 +16,7 @@ org\aguzman\apiservlet\webapp\headers\util\ConexionBaseDatosDS.class
 org\aguzman\apiservlet\webapp\headers\repositories\CategoriaRepositoryImpl.class
 org\aguzman\apiservlet\webapp\headers\services\UsuarioServiceImpl.class
 org\aguzman\apiservlet\webapp\headers\models\Carro.class
+org\aguzman\apiservlet\webapp\headers\config\ProducerResources.class
 org\aguzman\apiservlet\webapp\headers\controllers\AgregarCarroServlet.class
 org\aguzman\apiservlet\webapp\headers\filters\ConexionFilter.class
 org\aguzman\apiservlet\webapp\headers\models\Producto.class

@@ -1,15 +1,21 @@
 package org.aguzman.apiservlet.webapp.headers.repositories;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import org.aguzman.apiservlet.webapp.headers.models.Categoria;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class CategoriaRepositoryImpl implements Repository<Categoria>{
-    private Connection conn;
 
-    public CategoriaRepositoryImpl(Connection conn) {
+    private Connection conn;
+    //esta es otra forma y la de producto es otra version
+    @Inject
+    public CategoriaRepositoryImpl(@Named("conn") Connection conn) {
         this.conn = conn;
     }
 

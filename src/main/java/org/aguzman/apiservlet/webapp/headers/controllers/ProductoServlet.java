@@ -1,5 +1,6 @@
 package org.aguzman.apiservlet.webapp.headers.controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,10 +17,12 @@ import java.util.Optional;
 
 @WebServlet({"/productos.html", "/productos"})
 public class ProductoServlet extends HttpServlet {
+
+    @Inject
+    private ProductoService service;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
-        ProductoService service = new ProductoServiceJdbcImpl(conn);
         List<Producto> productos = service.listar();
 
         LoginService auth = new LoginServiceSessionImpl();
