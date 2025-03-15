@@ -6,6 +6,8 @@ org\aguzman\apiservlet\webapp\headers\repositories\UsuarioRepository.class
 org\aguzman\apiservlet\webapp\headers\services\ServiceJdbcException.class
 org\aguzman\apiservlet\webapp\headers\repositories\ProductoRepositoryJdbcImpl.class
 org\aguzman\apiservlet\webapp\headers\listeners\AplicacionListener.class
+org\aguzman\apiservlet\webapp\headers\config\ProductoServicePrincipal.class
+org\aguzman\apiservlet\webapp\headers\config\MysqlConn.class
 org\aguzman\apiservlet\webapp\headers\models\ItemCarro.class
 org\aguzman\apiservlet\webapp\headers\util\ConexionBaseDatos.class
 org\aguzman\apiservlet\webapp\headers\services\ProductoServiceImpl.class

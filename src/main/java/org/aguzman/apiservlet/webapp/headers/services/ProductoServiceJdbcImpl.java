@@ -2,6 +2,8 @@ package org.aguzman.apiservlet.webapp.headers.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import org.aguzman.apiservlet.webapp.headers.config.ProductoServicePrincipal;
 import org.aguzman.apiservlet.webapp.headers.models.Categoria;
 import org.aguzman.apiservlet.webapp.headers.models.Producto;
 import org.aguzman.apiservlet.webapp.headers.repositories.CategoriaRepositoryImpl;
@@ -14,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @ApplicationScoped
+@ProductoServicePrincipal
 public class ProductoServiceJdbcImpl implements ProductoService{
     @Inject
     private Repository<Producto> repositoryJdbc;

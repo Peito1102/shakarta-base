@@ -1,12 +1,14 @@
 package org.aguzman.apiservlet.webapp.headers.controllers;
 
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.aguzman.apiservlet.webapp.headers.config.ProductoServicePrincipal;
 import org.aguzman.apiservlet.webapp.headers.models.Carro;
 import org.aguzman.apiservlet.webapp.headers.models.ItemCarro;
 import org.aguzman.apiservlet.webapp.headers.models.Producto;
@@ -23,11 +25,13 @@ public class AgregarCarroServlet extends HttpServlet {
     @Inject
     private Carro carro;
 
+    @Inject
+    @ProductoServicePrincipal
+    private ProductoService service;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
-        Connection conn = (Connection) req.getAttribute("conn");
-        ProductoService service = new ProductoServiceJdbcImpl(conn);
         Optional<Producto> producto = service.porId(id);
         if (producto.isPresent()) {
             ItemCarro item = new ItemCarro(1, producto.get());
