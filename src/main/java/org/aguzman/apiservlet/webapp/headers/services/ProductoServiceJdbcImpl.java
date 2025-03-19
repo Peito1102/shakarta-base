@@ -4,6 +4,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import org.aguzman.apiservlet.webapp.headers.config.ProductoServicePrincipal;
+import org.aguzman.apiservlet.webapp.headers.config.Service;
 import org.aguzman.apiservlet.webapp.headers.interceptores.Logging;
 import org.aguzman.apiservlet.webapp.headers.models.Categoria;
 import org.aguzman.apiservlet.webapp.headers.models.Producto;
@@ -16,7 +17,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-@ApplicationScoped
+@Service
 @ProductoServicePrincipal
 public class ProductoServiceJdbcImpl implements ProductoService{
     @Inject
@@ -26,7 +27,6 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     private Repository<Categoria> repositoryCategoriaJdbc;
 
     @Override
-    @Logging
     public List<Producto> listar() {
         try {
             return repositoryJdbc.listar();
@@ -36,7 +36,6 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     }
 
     @Override
-    @Logging
     public Optional<Producto> porId(Long id) {
         try {
             return Optional.ofNullable(repositoryJdbc.porId(id));

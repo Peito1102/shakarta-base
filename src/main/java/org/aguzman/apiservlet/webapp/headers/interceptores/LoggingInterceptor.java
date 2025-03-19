@@ -15,12 +15,12 @@ public class LoggingInterceptor {
 
     @AroundInvoke
     public Object logging(InvocationContext invocation) throws Exception {
-        log.info("***** entrando antes de invocar el metodo de la clase "
+        log.info("***** entrando antes de invocar el metodo" + invocation.getMethod().getName() + "de la clase "
                 + invocation.getMethod().getDeclaringClass());
         Object resultado = invocation.proceed();
 
         log.info("***** saliendo de la invocacion del metodo " +
-                invocation.getMethod().getDeclaringClass());
+                invocation.getMethod().getName());
         return resultado;
     }
 }

@@ -12,6 +12,7 @@ org\aguzman\apiservlet\webapp\headers\config\CarroCompra.class
 org\aguzman\apiservlet\webapp\headers\config\MysqlConn.class
 org\aguzman\apiservlet\webapp\headers\models\ItemCarro.class
 org\aguzman\apiservlet\webapp\headers\util\ConexionBaseDatos.class
+org\aguzman\apiservlet\webapp\headers\interceptores\TransactionalJdbc.class
 org\aguzman\apiservlet\webapp\headers\services\ProductoServiceImpl.class
 org\aguzman\apiservlet\webapp\headers\repositories\Repository.class
 org\aguzman\apiservlet\webapp\headers\services\LoginServiceSessionImpl.class
@@ -22,6 +23,7 @@ org\aguzman\apiservlet\webapp\headers\services\UsuarioServiceImpl.class
 org\aguzman\apiservlet\webapp\headers\models\Carro.class
 org\aguzman\apiservlet\webapp\headers\config\ProducerResources.class
 org\aguzman\apiservlet\webapp\headers\controllers\AgregarCarroServlet.class
+org\aguzman\apiservlet\webapp\headers\config\Service.class
 org\aguzman\apiservlet\webapp\headers\filters\ConexionFilter.class
 org\aguzman\apiservlet\webapp\headers\interceptores\LoggingInterceptor.class
 org\aguzman\apiservlet\webapp\headers\models\Producto.class
@@ -36,3 +38,4 @@ org\aguzman\apiservlet\webapp\headers\controllers\LoginServlet.class
 org\aguzman\apiservlet\webapp\headers\controllers\ActualizarCarroServlet.class
 org\aguzman\apiservlet\webapp\headers\models\Usuario.class
 org\aguzman\apiservlet\webapp\headers\controllers\ProductoFormServlet.class
+org\aguzman\apiservlet\webapp\headers\interceptores\TransactionalInterceptor.class
