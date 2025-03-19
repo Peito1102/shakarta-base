@@ -1,6 +1,9 @@
 package org.aguzman.apiservlet.webapp.headers.models;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import org.aguzman.apiservlet.webapp.headers.config.CarroCompra;
 
@@ -8,16 +11,25 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @CarroCompra
 public class Carro implements Serializable {
     private List<ItemCarro> items;
 
-    public Carro() {
+    @Inject
+    private transient Logger log;
+
+    @PostConstruct
+    public void inicializar() {
         this.items = new ArrayList<>();
+        log.info("inicializando el carro de compras!");
     }
 
-
+    @PreDestroy
+    public void destruir() {
+        log.info("Destruyendo el carro de compras!");
+    }
 
     public void addItemCarro(ItemCarro itemCarro) {
         if (items.contains(itemCarro)) {

@@ -1,5 +1,7 @@
 package org.aguzman.apiservlet.webapp.headers.repositories;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.aguzman.apiservlet.webapp.headers.config.MysqlConn;
@@ -9,12 +11,26 @@ import org.aguzman.apiservlet.webapp.headers.models.Producto;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 @ApplicationScoped
 public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
     @Inject
+    private Logger log;
+
+    @Inject
     @MysqlConn
     private Connection conn;
+
+    @PostConstruct
+    public void inicializar() {
+        log.info("inicializando el beans: " + this.getClass().getName());
+    }
+
+    @PreDestroy
+    public void destroy() {
+        log.info("destruyendo el beans: " + this.getClass().getName());
+    }
 
     @Override
     public List<Producto> listar() throws SQLException {

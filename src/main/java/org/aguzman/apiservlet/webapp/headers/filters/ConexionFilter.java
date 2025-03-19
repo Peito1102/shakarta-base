@@ -20,7 +20,8 @@ public class ConexionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        try (Connection connRequest = this.conn) {
+        try  {
+            Connection connRequest = this.conn;
 
             if (connRequest.getAutoCommit()) {
                 connRequest.setAutoCommit(false);
